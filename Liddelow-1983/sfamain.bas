@@ -52,9 +52,7 @@
 630 PRINT"You have scored: "PT"points.":RETURN
 700 INPUT"Are you sure you want to quit";QU$:IF LEFT$(QU$,1)<>"N" GOTO 7300 ELSE RETURN
 800 OPEN"O",#1,"SFA/SAV.0":FOR X=0 TO 29:WRITE#1,OP(X):NEXT X:FOR Y=1 TO 72:WRITE#1,FT(Y):NEXT Y:FOR Z=0 TO 14:WRITE#1,SP(Z):NEXT Z:WRITE#1,RN,TU,SC,IN,PR:CLOSE#1
-810 PRINT"The game is now saved for later play.
-"CHR$(13)"To continue the same game, type RESTORE at your
-"CHR$(13)"first turn after resumption":PRINT:GOSUB 600:PRINT:END
+810 PRINT"The game is now saved for later play.":PRINT"To continue the same game, type RESTORE at your":PRINT"first turn after resumption":PRINT:GOSUB 600:PRINT:END
 900 IF TU>1 THEN PRINT"It is too late to resume an old game":RETURN
 910 OPEN"I",#1,"SFA/SAV.0":FOR X=0 TO 29:INPUT#1,OP(X):NEXT X:FOR Y=1 TO 72:INPUT#1,FT(Y):NEXT Y:FOR Z=0 TO 14:INPUT#1,SP(Z):NEXT Z:INPUT#1,RN,TU,SC,IN,PR:CLOSE#1:N=RN:GOSUB 7000:RETURN
 970 S2=C1+1:C2$=MID$(CO$,S2,4)
